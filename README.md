@@ -1,4 +1,8 @@
-# zukobot
+# Zuko.js
+
+![Zuko gif](https://media1.tenor.com/m/NCPP4cCUKvEAAAAC/legend-of-korra-avatar.gif)
+
+Discord bot written in Javascript.
 
 To install dependencies:
 
@@ -9,7 +13,5 @@ bun install
 To run:
 
 ```bash
-bun run index.ts
+bun run .
 ```
-
-This project was created using `bun init` in bun v1.3.11. [Bun](https://bun.com) is a fast all-in-one JavaScript runtime.

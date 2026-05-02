@@ -1,5 +1,5 @@
 {
-  "name": "zukobot",
+  "name": "zuko.js",
   "module": "index.ts",
   "type": "module",
   "private": true,
