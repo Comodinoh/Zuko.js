@@ -1,9 +1,11 @@
 import { Events } from "discord.js"
+import { loadImagesToCache } from "../messages";
 
 const event = {
     event: Events.ClientReady,
     once: true,
-    execute(client) {
+    async execute(client) {
+        await loadImagesToCache();
         console.log("Zuko.js is ready!");
     }
 }

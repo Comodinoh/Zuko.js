@@ -1,13 +1,24 @@
-import { Events, Message, MessagePayload } from "discord.js"
+import { Attachment, AttachmentBuilder, Events, Message, MessagePayload, MessageReplyOptions, TextDisplayBuilder, ThumbnailBuilder, MessageFlags, SectionBuilder, MediaGalleryBuilder, FileBuilder } from "discord.js"
 import { client } from "..";
+import { cache, getRandomMessage, getRandomImage, getRandomImageFromMessage } from "../messages";
+
 
 const event = {
     event: Events.MessageCreate,
     once: false,
-    execute(msg: Message<boolean>) {
+    async execute(msg: Message<boolean>) {
         if(msg.author.id == client.user?.id) return;
         if(!msg.content.toLowerCase().includes('zuko')) return;
-        msg.reply(new MessagePayload(msg, {content: "Hello! Zuko here!"}));
+
+        const message = getRandomMessage();
+
+        const imgUrl = getRandomImageFromMessage(message)!;
+
+        const att = new AttachmentBuilder(cache.get(imgUrl)!, {name: 'zuko.jpg'});
+
+        let mess = await msg.reply(message.content);
+
+        mess.edit({content: message.content, files: [att]})
     }
 }
 
