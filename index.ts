@@ -1,15 +1,24 @@
-import {Client, GatewayIntentBits, Events} from 'discord.js';
+import {Client, GatewayIntentBits, Events, MessagePayload} from 'discord.js';
 import { checkAndGetEnv } from "./utils";
+import { register } from './event.controller';
 
 console.log("Starting Zuko.js!");
 
 const TOKEN = checkAndGetEnv("TOKEN");
 
-const client = new Client({intents: [GatewayIntentBits.Guilds]});
+export const client = new Client({intents: [
+    GatewayIntentBits.Guilds, 
+    GatewayIntentBits.MessageContent, 
+    GatewayIntentBits.GuildMembers,
+    GatewayIntentBits.GuildMessages,
+]});
 
-client.on("clientReady", (client: Client<true>) => {
-    console.log("Zuko.js is ready!");
-});
+try {
+    register(client, './events/');
+} catch(err) {
+    console.error('[Zuko.js] Error while registering events: ', err);
+}
+
 
 client.login(TOKEN);
 
