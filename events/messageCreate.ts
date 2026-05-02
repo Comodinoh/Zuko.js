@@ -8,7 +8,7 @@ const event = {
     once: false,
     async execute(msg: Message<boolean>) {
         if(msg.author.id == client.user?.id) return;
-        if(!msg.content.toLowerCase().includes('zuko')) return;
+        if(msg.content.toLowerCase() !== 'zuko') return;
 
         const message = getRandomMessage();
 
