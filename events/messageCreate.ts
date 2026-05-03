@@ -1,6 +1,6 @@
 import { AttachmentBuilder, Events, Message } from "discord.js"
 import { client } from "..";
-import { MessageGenerator, nameMessageGenerator } from "../lib/messageApi";
+import { MessageGenerator, nameMessageGenerator, pingMessageGenerator } from "../lib/messageApi";
 
 
 const event = {
@@ -10,7 +10,7 @@ const event = {
         if(msg.author.id == client.user?.id) return;
 
         if(msg.mentions.has(client.user!)) {
-            await msg.reply('Hello! Zuko here!')
+            await msg.reply(pingMessageGenerator.getRandomMessage().content);
             return;
         }
 
