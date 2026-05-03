@@ -1,4 +1,3 @@
-import type { Sharp } from "sharp";
 import sharp from "sharp";
 
 

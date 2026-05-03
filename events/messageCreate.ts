@@ -1,4 +1,4 @@
-import { Attachment, AttachmentBuilder, Events, Message, MessagePayload, MessageReplyOptions, TextDisplayBuilder, ThumbnailBuilder, MessageFlags, SectionBuilder, MediaGalleryBuilder, FileBuilder } from "discord.js"
+import { AttachmentBuilder, Events, Message } from "discord.js"
 import { client } from "..";
 import { MessageGenerator, nameMessageGenerator } from "../lib/messageApi";
 
