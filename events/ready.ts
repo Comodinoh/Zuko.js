@@ -1,5 +1,5 @@
 import { Events } from "discord.js"
-import { nameMessageGenerator} from "../messages";
+import { nameMessageGenerator} from "../lib/messageApi";
 
 const event = {
     event: Events.ClientReady,
