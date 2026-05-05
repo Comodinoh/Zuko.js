@@ -1,6 +1,5 @@
 import sharp from "sharp";
 
-
 export class MessageGenerator {
     constructor( messages: RandomMessage[], images?: string[]) {
         this.images = images;
@@ -81,7 +80,22 @@ export const pingMessageGenerator: MessageGenerator = new MessageGenerator(
             content: "Hello! Zuko here!"
         },
         {
-            content: "That's rough buddy"
+            content: "That's rough, buddy"
+        },
+        {
+            content: "I juggled"
+        },
+        {
+            content: "You're so beautiful when you hate the world"
+        },
+        {
+            content: "I'm never happy"
+        },
+        {
+            content: "The scar's not on the wrong side!!!"
+        },
+        {
+            content: "HONOR"
         },
     ],
 );
